@@ -33,13 +33,13 @@ public class BusController {
                 Constraints.clearFiels(busAgencyField, busOriginField, busDestinationField);
             } else {
                 if (!Constraints.isCorrectRange(busAgencyField, 16, 2) ) {
-                    Constraints.showAlert("Error", "must: 2 < Agency <= 16 !", Alert.AlertType.ERROR);
+                    Constraints.showAlert("Error", "must: 2 <= Agency <= 16 !", Alert.AlertType.ERROR);
                 }
                 else if (!Constraints.isCorrectRange(busOriginField, 16, 2) ) {
-                    Constraints.showAlert("Error" ,"must: 2 < Origin <= 16 !", Alert.AlertType.ERROR);
+                    Constraints.showAlert("Error" ,"must: 2 <= Origin <= 16 !", Alert.AlertType.ERROR);
                 }
                 else if (!Constraints.isCorrectRange(busDestinationField, 16, 2) ) {
-                    Constraints.showAlert("Error" ,"must: 2 < Origin <= 16 !", Alert.AlertType.ERROR);
+                    Constraints.showAlert("Error" ,"must: 2 <= Origin <= 16 !", Alert.AlertType.ERROR);
                 } else {
                     Crud.insertBus(bus.getId(), bus.getAgency(), bus.getOrigin(), bus.getDestination());
                     Constraints.clearFiels(busIdField, busAgencyField, busOriginField, busDestinationField);
@@ -59,7 +59,7 @@ public class BusController {
                 busOriginField.setText(bus.getOrigin());
                 busDestinationField.setText(bus.getDestination());
             } else {
-                Constraints.showAlert("Not Found" ,"Bus not found!", Alert.AlertType.INFORMATION);
+                Constraints.showAlert("Not Found" ,"Bus not found!", Alert.AlertType.ERROR);
             }
         } catch (NumberFormatException e) {
             Constraints.showAlert("Invalid" ,"Invalid ID!", Alert.AlertType.ERROR);
@@ -108,7 +108,7 @@ public class BusController {
 
     @FXML
     private void busCloseButton() {
-        Constraints.showAlert("Cancel", "Do you want to Cancel?", Alert.AlertType.CONFIRMATION, closeButton);
+        Constraints.showCloseConfirmation("Cancel", "Do you want to Cancel?", Alert.AlertType.CONFIRMATION, closeButton);
     }
 
     private Bus getBusFromFields(TextField busIdField, TextField busAgencyField,

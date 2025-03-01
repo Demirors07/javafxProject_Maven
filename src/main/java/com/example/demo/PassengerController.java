@@ -35,11 +35,11 @@ public class PassengerController {
                 Constraints.showAlert("Error" ,"This data already exists!", Alert.AlertType.ERROR);
                 Constraints.clearFiels(passengerNameField, passengerAdressField, passengerTelField);
             } else {
-                if (!Constraints.isCorrectRange(passengerNameField, 16, 2) ) {
-                    Constraints.showAlert("Error", "must: 2 < Name <= 16 !", Alert.AlertType.ERROR);
+                if (!(Constraints.isCorrectRange(passengerNameField, 16, 2)) ) {
+                    Constraints.showAlert("Error", "must: 2 <= Name <= 16 !", Alert.AlertType.ERROR);
                 }
-                else if (!Constraints.isCorrectRange(passengerAdressField, 32, 5) ) {
-                    Constraints.showAlert("Error" ,"must: 5 < Adress <= 32 !", Alert.AlertType.ERROR);
+                else if (!(Constraints.isCorrectRange(passengerAdressField, 32, 5)) ) {
+                    Constraints.showAlert("Error" ,"must: 5 <= Adress <= 32 !", Alert.AlertType.ERROR);
                 }
                 else if (passengerTelField.getText().length() != 11 ) {
                     Constraints.showAlert("Error" ,"Tel must be 11 char", Alert.AlertType.ERROR);
@@ -76,10 +76,10 @@ public class PassengerController {
         if (passenger != null) {
             if (Constraints.isDataExists(passenger.getId(), "passenger", "pass_id" )) {
                 if (!Constraints.isCorrectRange(passengerNameField, 16, 2) ) {
-                    Constraints.showAlert("Error", "must: 2 < Name <= 16 !", Alert.AlertType.ERROR);
+                    Constraints.showAlert("Error", "must: 2 <= Name <= 16 !", Alert.AlertType.ERROR);
                 }
                 else if (!Constraints.isCorrectRange(passengerAdressField, 32, 5) ) {
-                    Constraints.showAlert("Error" ,"must: 5 < Adress <= 32 !", Alert.AlertType.ERROR);
+                    Constraints.showAlert("Error" ,"must: 5 <= Adress <= 32 !", Alert.AlertType.ERROR);
                 }
                 else if (passengerTelField.getText().trim().length() != 11 ) {
                     Constraints.showAlert("Error" ,"must: 11 char length", Alert.AlertType.ERROR);
@@ -140,8 +140,5 @@ public class PassengerController {
             return null;
         }
     }
-
-
-
 
 }

@@ -11,12 +11,14 @@ import java.util.Optional;
 
 public class Constraints {
 
+    // Clearing TextFields
     public static void clearFiels(TextField... fields) {
         for (TextField textField : fields) {
             textField.clear();
         }
     }
 
+    // General Alert
     public static void showAlert(String title, String message, Alert.AlertType type) {
         Alert alert = new Alert(type);
         alert.setTitle(title);
@@ -25,17 +27,18 @@ public class Constraints {
         alert.showAndWait();
     }
 
-    public static void showAlert(String title, String message, Alert.AlertType type, Button close) {
+    // For CloseButton - Informing + Closing -
+    public static void showCloseConfirmation(String title, String message, Alert.AlertType type, Button closeButton) {
         Alert alert = new Alert(type, message, ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
         alert.setTitle(title);
-        alert.setHeaderText(null);
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.YES) {
-            Stage stage = (Stage) close.getScene().getWindow();
+            Stage stage = (Stage) closeButton.getScene().getWindow();
             stage.close();
         }
     }
 
+    // Delete Confirmation Bus or Passenger based on entered parameter
     public static void showDeleteConfirmation(int id, String whichDatabase) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "ID: " + id, ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
         alert.setTitle("Confirmation of Deletion");
@@ -50,6 +53,7 @@ public class Constraints {
         }
     }
 
+    // Is there any data for the given id?
     public static boolean isDataExists(int id, String whichDatabase, String id_RowName) {
         String sql = "SELECT COUNT(*) FROM " + whichDatabase + " WHERE " + id_RowName + " = ?";
 
@@ -68,9 +72,10 @@ public class Constraints {
         return false;
     }
 
+    // Limiting the length entered into a textfield
     public static boolean isCorrectRange(TextField tf, int maxLength, int minLength) {
-        return tf.getText().trim().length() <= maxLength || minLength >= tf.getText().trim().length();
+        System.out.print(tf.getText().length() > 5);
+        return tf.getText().trim().length() <= maxLength && minLength <= tf.getText().trim().length();
     }
-
 
 }

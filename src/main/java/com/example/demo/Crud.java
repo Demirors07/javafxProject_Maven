@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Crud {
+    // Bus insertion in PostgreSQL
     public static void insertPassenger(int pass_id, String name, String adress, String tel) {
         String sql = "INSERT INTO passenger (pass_id, name, adress, tel) VALUES (?, ?, ?, ?)";
 
@@ -31,6 +32,7 @@ public class Crud {
         }
     }
 
+    // Getting Passenger from PostgreSQL
     public static Passenger getPassengerById(int id) {
         String sql = "SELECT * FROM passenger WHERE pass_id = ?";
         Passenger passenger = null;
@@ -54,6 +56,7 @@ public class Crud {
         return passenger;
     }
 
+    // Passenger updating in PostgreSQL
     public static void updatePassenger(int id, String newName, String newAdress, String newTel) {
         String sql = "UPDATE passenger SET name = ?, adress = ?, tel = ? WHERE pass_id = ?";
 
@@ -77,7 +80,7 @@ public class Crud {
         }
     }
 
-    // Deleting Passenger Values
+    // Passenger deleting from PostgreSQL
     public static void deletePassenger(int id) {
         String sql = "DELETE FROM passenger WHERE pass_id = ?";
 
@@ -98,7 +101,7 @@ public class Crud {
         }
     }
 
-    // PostgreSQL'e veri ekleme fonksiyonu
+    // Bus insertion in PostgreSQL
     public static void insertBus(int bus_id, String agency, String origin, String destination) {
         String sql = "INSERT INTO bus (bus_id, agency, origin, destination) VALUES (?, ?, ?, ?)";
 
@@ -123,6 +126,7 @@ public class Crud {
         }
     }
 
+    // Getting Bus from PostgreSQL
     public static Bus getBusById(int id) {
         String sql = "SELECT * FROM bus WHERE bus_id = ?";
         Bus bus = null;
@@ -142,7 +146,7 @@ public class Crud {
         return bus;
     }
 
-    // Deleting Passenger Values
+    // Deleting Bus Values From PostgreSQL
     public static void deleteBus(int id) {
         String sql = "DELETE FROM bus WHERE bus_id = ?";
 
