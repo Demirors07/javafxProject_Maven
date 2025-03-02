@@ -74,7 +74,6 @@ public class Constraints {
 
     // Limiting the length entered into a textfield
     public static boolean isCorrectRange(TextField tf, int maxLength, int minLength) {
-        System.out.print(tf.getText().length() > 5);
         return tf.getText().trim().length() <= maxLength && minLength <= tf.getText().trim().length();
     }
 
