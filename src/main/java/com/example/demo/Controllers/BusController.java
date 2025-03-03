@@ -79,7 +79,7 @@ public class BusController {
                     Constraints.showAlert("Error" ,"must: 2 <= Origin <= 16 !", Alert.AlertType.ERROR);
                 }
                 else if (!Constraints.isCorrectRange(busDestinationField, 16, 2) ) {
-                    Constraints.showAlert("Error" ,"must: 2 <= Origin <= 16 !", Alert.AlertType.ERROR);
+                    Constraints.showAlert("Error" ,"must: 2 <= Destination <= 16 !", Alert.AlertType.ERROR);
                 } else {
                     Crud.updateBus(bus.getId(), bus.getAgency(), bus.getOrigin(), bus.getDestination());
                     Constraints.clearFiels(busIdField, busAgencyField, busOriginField, busDestinationField);
