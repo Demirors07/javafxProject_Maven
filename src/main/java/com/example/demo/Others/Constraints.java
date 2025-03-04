@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.Others;
 
 import javafx.scene.control.*;
 import javafx.stage.Stage;
@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Optional;
-import com.example.demo.TravelApp;
+
 
 public class Constraints {
 

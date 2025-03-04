@@ -1,5 +1,6 @@
-package com.example.demo;
+package com.example.demo.Others;
 
+import com.example.demo.Models.*;
 import javafx.scene.control.Alert;
 
 import java.sql.Connection;

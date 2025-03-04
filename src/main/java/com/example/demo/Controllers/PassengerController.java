@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.Controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,7 +9,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.io.IOException;
-
+import com.example.demo.Models.*;
+import com.example.demo.Others.*;
 
 
 public class PassengerController {

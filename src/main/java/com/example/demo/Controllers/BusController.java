@@ -1,9 +1,11 @@
-package com.example.demo;
+package com.example.demo.Controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import com.example.demo.Models.*;
+import com.example.demo.Others.*;
 
 public class BusController {
 
