@@ -1,5 +1,6 @@
 package com.example.demo;
 
+
 public class Passenger {
     private Integer pass_id;
     private String name;
