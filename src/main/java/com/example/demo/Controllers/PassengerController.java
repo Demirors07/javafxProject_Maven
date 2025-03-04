@@ -114,7 +114,7 @@ public class PassengerController {
     @FXML
     private void passNextButton() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("bus-view.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/demo/bus-view.fxml"));
             Parent root = fxmlLoader.load();
             Stage secondStage = new Stage();
             secondStage.setTitle("DIMS Project");
@@ -127,6 +127,9 @@ public class PassengerController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("bus-view.fxml"));
+//        System.out.println(fxmlLoader);
+//        System.out.println(getClass().getResource("/com/example/demo/bus-view.fxml"));
     }
 
     private Passenger getPassengerFromFields(TextField passengerIdField, TextField passengerNameField,
